@@ -2,8 +2,8 @@
   "config": {
     "step": {
       "user": {
-        "title": "WashData Setup",
-        "description": "Konfigurera din tvättmaskin eller annan apparat.\n\nEffektsensor krävs.\n\n**Närnäst kommer du att bli tillfrågad om du vill skapa din första profil.**",
+        "title": "Konfigurera WashData",
+        "description": "Konfigurera din tvättmaskin eller annan enhet.\n\nEn effektsensor krävs.\n\n**Härnäst får du välja om du vill skapa din första profil.**",
         "data": {
           "name": "Enhetens namn",
           "device_type": "Enhetstyp",
@@ -11,18 +11,18 @@
           "min_power": "Minsta effekttröskel (W)"
         },
         "data_description": {
-          "name": "Ett vänligt namn för den här enheten (t.ex. \"Tvättmaskin\", \"Diskmaskin\").",
-          "device_type": "Vilken typ av apparat är detta? Hjälper till att skräddarsy detektering och märkning.",
-          "power_sensor": "Sensorenheten som rapporterar strömförbrukning i realtid (i watt) från din smarta kontakt.",
-          "min_power": "Effektavläsningar över detta tröskelvärde (i watt) indikerar att apparaten är igång. Börja med 2W för de flesta enheter."
+          "name": "Ett namn för den här enheten (t.ex. \"Tvättmaskin\" eller \"Diskmaskin\").",
+          "device_type": "Vilken typ av apparat är det här? Hjälper till att anpassa identifiering och märkning.",
+          "power_sensor": "Sensorentiteten från din smarta kontakt som rapporterar aktuell effektförbrukning i watt.",
+          "min_power": "Effektvärden över den här gränsen (i watt) betyder att apparaten är igång. Börja med 2 W för de flesta enheter."
         }
       },
       "first_profile": {
         "title": "Skapa första profil",
-        "description": "En **Cykel** är en komplett körning av din apparat (t.ex. en massa tvätt). En **Profil** grupperar dessa cykler efter typ (t.ex. \"Bomull\", \"Snabbtvätt\"). Att skapa en profil hjälper nu integrationen att uppskatta varaktigheten omedelbart.\n\nDu kan välja den här profilen manuellt i enhetens kontroller om den inte upptäcks automatiskt.\n\n**Lämna \"Profilnamn\" tomt för att hoppa över det här steget.**",
+        "description": "En **cykel** är en komplett körning av apparaten (t.ex. en tvättomgång). En **profil** samlar cykler av samma typ (t.ex. \"Bomull\" eller \"Snabbtvätt\"). Om du skapar en profil nu kan integrationen börja uppskatta tiden direkt.\n\nDu kan också välja den här profilen manuellt i enhetens kontroller om den inte identifieras automatiskt.\n\n**Lämna \"Profilnamn\" tomt om du vill hoppa över det här steget.**",
         "data": {
           "profile_name": "Profilnamn (valfritt)",
-          "manual_duration": "Beräknad varaktighet (minuter)"
+          "manual_duration": "Beräknad tid (minuter)"
         }
       }
     },
@@ -51,34 +51,34 @@
       },
       "apply_suggestions": {
         "title": "Kopiera föreslagna värden",
-        "description": "Detta kommer att kopiera de nuvarande föreslagna värdena till dina sparade inställningar. Detta är en engångsåtgärd och möjliggör inte automatisk överskrivning.\n\nFöreslagna värden att kopiera:\n{suggested}",
+        "description": "Det här kopierar de föreslagna värdena till dina sparade inställningar. Det är en engångsåtgärd och aktiverar inte automatisk överskrivning.\n\nFöreslagna värden att kopiera:\n{suggested}",
         "data": {
-          "confirm": "Bekräfta kopieringsåtgärd"
+          "confirm": "Bekräfta kopieringen"
         }
       },
       "apply_suggestions_confirm": {
         "title": "Granska föreslagna ändringar",
-        "description": "WashData hittade {pending_count} föreslagna värden att tillämpa.\n\nÄndringar att granska:\n{changes}\n\nBekräfta nedan för att föra in dessa värden i formuläret. De sparas inte förrän du skickar in avancerade inställningar.",
+        "description": "WashData hittade {pending_count} föreslagna värden.\n\nÄndringar att granska:\n{changes}\n\nBekräfta nedan för att lägga in värdena i formuläret. De sparas inte förrän du skickar in de avancerade inställningarna.",
         "data": {
-          "confirm_apply_suggestions": "Fyll i föreslagna värden i avancerade inställningar"
+          "confirm_apply_suggestions": "Lägg in föreslagna värden i Avancerade inställningar"
         }
       },
       "settings": {
         "title": "Inställningar",
-        "description": "Justera detektionströsklar, inlärning och avancerat beteende. Standardinställningarna fungerar bra för de flesta inställningar.\n\nTillgängliga föreslagna inställningar: {suggestions_count}.\nOm detta är över 0, öppna Avancerade inställningar och använd Tillämpa föreslagna värden för att granska rekommendationerna.",
+        "description": "Justera tröskelvärden, inlärning och avancerade funktioner. Standardinställningarna fungerar bra i de flesta installationer.\n\nAntal föreslagna inställningar just nu: {suggestions_count}.\nOm värdet är större än 0, öppna Avancerade inställningar och använd \"Använd föreslagna värden\" för att granska rekommendationerna.",
         "data": {
-          "apply_suggestions": "Tillämpa föreslagna värden",
+          "apply_suggestions": "Använd föreslagna värden",
           "device_type": "Enhetstyp",
-          "power_sensor": "Effektsensorenhet",
+          "power_sensor": "Effektsensorentitet",
           "min_power": "Minsta effekt (W)",
-          "off_delay": "Cykelslutfördröjning (s)",
+          "off_delay": "Fördröjning innan cykeln avslutas (s)",
           "notify_service": "Aviseringstjänst (t.ex. notify.mobile_app)",
           "notify_actions": "Aviseringsåtgärder",
-          "notify_people": "Fördröj leveransen tills dessa personer är hemma",
-          "notify_only_when_home": "Fördröj aviseringar tills den valda personen är hemma",
-          "notify_fire_events": "Aktivera automationshändelser",
+          "notify_people": "Vänta med att skicka tills någon av dessa personer är hemma",
+          "notify_only_when_home": "Vänta med aviseringar tills minst en vald person är hemma",
+          "notify_fire_events": "Skicka automationshändelser",
           "notify_events": "Händelser att avisera om",
-          "notify_before_end_minutes": "Förhandsavisering (minuter före slut)",
+          "notify_before_end_minutes": "Föravisering (minuter före slut)",
           "notify_title": "Aviseringsrubrik",
           "notify_icon": "Aviseringsikon",
           "notify_start_message": "Meddelandeformat för start",
@@ -88,37 +88,37 @@
         },
         "data_description": {
           "apply_suggestions": "Markera den här rutan för att kopiera värden som föreslås av inlärningsalgoritmen till formuläret. Granska innan du sparar.\n\nFöreslagna (från inlärning):\n- min_power: {suggested_min_power} W\n- off_delay: {suggested_off_delay} s\n- watchdog_interval: {suggested_watchdog_interval} s\n- no_update_active_timeout: {suggested_no_update_active_timeout} s\n- profile_match_interval: {suggested_profile_match_interval} s\n- auto_label_confidence: {suggested_auto_label_confidence}\n- duration_tolerance: {suggested_duration_tolerance}\n- profile_duration_tolerance: {suggested_profile_duration_tolerance}\n- profile_match_min_duration_ratio: {suggested_profile_match_min_duration_ratio}\n- profile_match_max_duration_ratio: {suggested_profile_match_max_duration_ratio}\n- start_threshold_w: {suggested_start_threshold_w} W\n- stop_threshold_w: {suggested_stop_threshold_w} W\n- end_energy_threshold: {suggested_end_energy_threshold} Wh\n- running_dead_zone: {suggested_running_dead_zone} s\n{suggested_reason}",
-          "device_type": "Välj typ av apparat (tvättmaskin, torktumlare, diskmaskin, kaffemaskin, EV). Denna tagg lagras med varje cykel för bättre organisation.",
-          "power_sensor": "Sensorenheten rapporterar effekt i realtid (i watt). Du kan ändra detta när som helst utan att förlora historisk data – användbart om du byter ut en smart kontakt.",
-          "min_power": "Effektavläsningar över detta tröskelvärde (i watt) indikerar att apparaten är igång. Börja med 2W för de flesta enheter.",
-          "off_delay": "Sekunder måste den utjämnade effekten hålla sig under stopptröskeln för att markera slutförande. Standard: 120s.",
+          "device_type": "Välj typ av apparat (tvättmaskin, torktumlare, diskmaskin, kaffemaskin, elbil). Den här etiketten sparas med varje cykel för bättre överblick.",
+          "power_sensor": "Sensorentiteten som rapporterar aktuell effekt i watt. Du kan ändra detta när som helst utan att förlora historik, till exempel om du byter smart kontakt.",
+          "min_power": "Effektvärden över den här gränsen (i watt) betyder att apparaten är igång. Börja med 2 W för de flesta enheter.",
+          "off_delay": "Hur många sekunder den utjämnade effekten måste ligga under stoptröskeln innan cykeln markeras som klar. Standard: 120 s.",
           "notify_service": "Home Assistant-aviseringstjänst att använda (valfritt).",
-          "notify_actions": "Valfri Home Assistant-åtgärdssekvens att köra för aviseringar (skript, avisering, TTS, etc.). Om inställt körs åtgärder innan reservaviseringstjänst.",
-          "notify_people": "Personenheter som används för närvarogrind. När det är aktiverat fördröjs aviseringsleveransen tills minst en vald person är hemma.",
-          "notify_only_when_home": "Om aktiverat, fördröja aviseringar tills minst en vald person är hemma.",
-          "notify_fire_events": "Om aktiverat, utlöser Home Assistant-händelser för cykelstart och -slut (ha_washdata_cycle_started och ha_washdata_cycle_ended) för att driva automatiseringar.",
-          "notify_events": "Vilka händelser aviseringar ska skickas för.",
-          "notify_before_end_minutes": "Minuter före det beräknade slutet av cykeln för att utlösa ett meddelande. Ställ in på 0 för att inaktivera. Standard: 0.",
+          "notify_actions": "Valfri åtgärdssekvens i Home Assistant för aviseringar (skript, notify, TTS osv.). Om den är angiven körs den före den vanliga aviseringstjänsten.",
+          "notify_people": "Personentiteter som används för närvarostyrning. När funktionen är aktiv väntar aviseringen tills minst en vald person är hemma.",
+          "notify_only_when_home": "Om aktiverat väntar aviseringar tills minst en vald person är hemma.",
+          "notify_fire_events": "Om aktiverat skickas Home Assistant-händelser för cykelstart och cykelslut (ha_washdata_cycle_started och ha_washdata_cycle_ended) som kan användas i automationer.",
+          "notify_events": "Vilka händelser som ska ge aviseringar.",
+          "notify_before_end_minutes": "Hur många minuter före beräknat slut aviseringen ska skickas. Sätt 0 för att stänga av. Standard: 0.",
           "notify_title": "Anpassad rubrik för aviseringar. Stöder platshållaren {device}.",
           "notify_icon": "Ikon att använda för aviseringar (t.ex. mdi:washing-machine). Lämna tomt för att skicka utan ikon.",
           "notify_start_message": "Meddelande som skickas när en cykel startar. Stöder platshållaren {device}.",
-          "notify_finish_message": "Meddelande som skickas när en cykel är klar. Stöder platshållarna {device}, {duration}, {program}.",
-          "notify_pre_complete_message": "Meddelande som skickas innan slutförandet. Stöder platshållarna {device}, {minutes}."
+          "notify_finish_message": "Meddelande som skickas när en cykel är klar. Stöder platshållarna {device}, {duration} och {program}.",
+          "notify_pre_complete_message": "Meddelande som skickas strax innan cykeln är klar. Stöder platshållarna {device} och {minutes}."
         }
       },
       "notifications": {
         "title": "Aviseringar",
-        "description": "Konfigurera aviseringskanaler, mallar och valfria liveuppdateringar för mobila framsteg.",
+        "description": "Ställ in aviseringskanaler, mallar och valfria löpande uppdateringar till mobilen.",
         "data": {
           "notify_service": "Aviseringstjänst (t.ex. notify.mobile_app)",
           "notify_actions": "Aviseringsåtgärder",
-          "notify_people": "Fördröj leveransen tills dessa personer är hemma",
-          "notify_only_when_home": "Fördröj aviseringar tills den valda personen är hemma",
-          "notify_fire_events": "Aktivera automationshändelser",
+          "notify_people": "Vänta med att skicka tills någon av dessa personer är hemma",
+          "notify_only_when_home": "Vänta med aviseringar tills minst en vald person är hemma",
+          "notify_fire_events": "Skicka automationshändelser",
           "notify_events": "Händelser att avisera om",
-          "notify_before_end_minutes": "Förhandsavisering (minuter före slut)",
-          "notify_live_interval_seconds": "Liveuppdateringsintervall (sekunder)",
-          "notify_live_overrun_percent": "Tillåten överskridning för liveuppdateringar (%)",
+          "notify_before_end_minutes": "Föravisering (minuter före slut)",
+          "notify_live_interval_seconds": "Intervall för liveuppdatering (sekunder)",
+          "notify_live_overrun_percent": "Extra marginal för liveuppdateringar (%)",
           "notify_title": "Aviseringsrubrik",
           "notify_icon": "Aviseringsikon",
           "notify_start_message": "Meddelandeformat för start",
@@ -127,35 +127,35 @@
         },
         "data_description": {
           "notify_service": "Home Assistant-aviseringstjänst att använda (valfritt).",
-          "notify_actions": "Valfri Home Assistant-åtgärdssekvens att köra för aviseringar (skript, avisering, TTS, etc.). Om inställt körs åtgärder innan reservaviseringstjänst.",
-          "notify_people": "Personenheter som används för närvarogrind. När det är aktiverat fördröjs aviseringsleveransen tills minst en vald person är hemma.",
-          "notify_only_when_home": "Om aktiverat, fördröja aviseringar tills minst en vald person är hemma.",
-          "notify_fire_events": "Om aktiverat, utlöser Home Assistant-händelser för cykelstart och -slut (ha_washdata_cycle_started och ha_washdata_cycle_ended) för att driva automatiseringar.",
-          "notify_events": "Vilka händelser aviseringar ska skickas för.",
-          "notify_before_end_minutes": "Minuter före det beräknade slutet av cykeln för att utlösa ett meddelande. Ställ in på 0 för att inaktivera. Standard: 0.",
-          "notify_live_interval_seconds": "Hur ofta förloppsuppdateringar skickas under körning. Lägre värden är mer lyhörda men förbrukar fler aviseringar. Minst 30 sekunder tillämpas — värden under 30 s avrundas automatiskt uppåt till 30 s.",
-          "notify_live_overrun_percent": "Säkerhetsmarginal över det uppskattade uppdateringsantalet för långa/överskridande cykler (t.ex. 20 % tillåter 1,2x uppskattade uppdateringar).",
+          "notify_actions": "Valfri åtgärdssekvens i Home Assistant för aviseringar (skript, notify, TTS osv.). Om den är angiven körs den före den vanliga aviseringstjänsten.",
+          "notify_people": "Personentiteter som används för närvarostyrning. När funktionen är aktiv väntar aviseringen tills minst en vald person är hemma.",
+          "notify_only_when_home": "Om aktiverat väntar aviseringar tills minst en vald person är hemma.",
+          "notify_fire_events": "Om aktiverat skickas Home Assistant-händelser för cykelstart och cykelslut (ha_washdata_cycle_started och ha_washdata_cycle_ended) som kan användas i automationer.",
+          "notify_events": "Vilka händelser som ska ge aviseringar.",
+          "notify_before_end_minutes": "Hur många minuter före beräknat slut aviseringen ska skickas. Sätt 0 för att stänga av. Standard: 0.",
+          "notify_live_interval_seconds": "Hur ofta förloppsuppdateringar skickas medan cykeln körs. Lägre värden ger snabbare uppdateringar men fler aviseringar. Minst 30 sekunder gäller — värden under 30 s avrundas automatiskt upp till 30 s.",
+          "notify_live_overrun_percent": "Extra marginal över det uppskattade antalet uppdateringar för långa cykler eller cykler som drar över tiden (t.ex. 20 % ger 1,2× så många uppdateringar som beräknat).",
           "notify_title": "Anpassad rubrik för aviseringar. Stöder platshållaren {device}.",
           "notify_icon": "Ikon att använda för aviseringar (t.ex. mdi:washing-machine). Lämna tomt för att skicka utan ikon.",
           "notify_start_message": "Meddelande som skickas när en cykel startar. Stöder platshållaren {device}.",
-          "notify_finish_message": "Meddelande som skickas när en cykel är klar. Stöder platshållarna {device}, {duration}, {program}.",
-          "notify_pre_complete_message": "Meddelande som skickas innan slutförandet. Stöder platshållarna {device}, {minutes}."
+          "notify_finish_message": "Meddelande som skickas när en cykel är klar. Stöder platshållarna {device}, {duration} och {program}.",
+          "notify_pre_complete_message": "Meddelande som skickas strax innan cykeln är klar. Stöder platshållarna {device} och {minutes}."
         }
       },
       "advanced_settings": {
         "title": "Avancerade inställningar",
-        "description": "Justera detektionströsklar, inlärning och avancerat beteende. Standardinställningarna fungerar bra för de flesta inställningar.\n\nTillgängliga föreslagna inställningar: {suggestions_count}. Använd Tillämpa föreslagna värden för att granska ändringar innan du sparar.",
+        "description": "Justera tröskelvärden, inlärning och avancerade funktioner. Standardinställningarna fungerar bra i de flesta installationer.\n\nAntal föreslagna inställningar just nu: {suggestions_count}. Använd \"Använd föreslagna värden\" för att granska ändringarna innan du sparar.",
         "data": {
-          "apply_suggestions": "Tillämpa föreslagna värden",
+          "apply_suggestions": "Använd föreslagna värden",
           "start_threshold_w": "Starttröskel (W)",
           "stop_threshold_w": "Stopptröskel (W)",
           "min_off_gap": "Minsta mellanrum mellan cykler (s)",
-          "start_duration_threshold": "Startfördröjningslängd (s)",
+          "start_duration_threshold": "Startbekräftelse (s)",
           "progress_reset_delay": "Fördröjning för förloppsåterställning (sekunder)",
           "no_update_active_timeout": "Timeout utan uppdatering (s)",
           "sampling_interval": "Samplingsintervall (s)",
-          "auto_label_confidence": "Konfidens för automatisk märkning (0–1)",
-          "learning_confidence": "Konfidens för feedbackbegäran (0–1)",
+          "auto_label_confidence": "Säkerhet för automatisk märkning (0–1)",
+          "learning_confidence": "Säkerhet för feedbackbegäran (0–1)",
           "duration_tolerance": "Varaktighetstolerans (0–0,5)",
           "profile_match_interval": "Profilmatchningsintervall (sekunder)",
           "profile_match_min_duration_ratio": "Minsta varaktighetsförhållande för profilmatchning (0,1–1,0)",
@@ -168,27 +168,27 @@
           "abrupt_drop_watts": "Avbruten: Abrupt effektfall (W)",
           "abrupt_drop_ratio": "Avbruten: Abrupt fallförhållande (0–1)",
           "abrupt_high_load_factor": "Avbruten: Hög belastningsfaktor",
-          "max_past_cycles": "Retention: Max sparade cykler",
-          "max_full_traces_per_profile": "Retention: Max fullständiga spår per profil",
-          "max_full_traces_unlabeled": "Retention: Max fullständiga spår omärkta",
-          "watchdog_interval": "Watchdog-intervall (sekunder)",
-          "completion_min_seconds": "Minsta körtid för slutförande (sekunder)",
+          "max_past_cycles": "Lagring: max antal sparade cykler",
+          "max_full_traces_per_profile": "Lagring: max antal fullständiga spår per profil",
+          "max_full_traces_unlabeled": "Lagring: max antal fullständiga omärkta spår",
+          "watchdog_interval": "Kontrollintervall (watchdog) (sekunder)",
+          "completion_min_seconds": "Minsta körtid för att räknas som klar (sekunder)",
           "notify_before_end_minutes": "Förhandsavisering (minuter före slut)",
           "auto_tune_noise_events_threshold": "Autojustering: Tröskel för bruscykler",
           "running_dead_zone": "Dödzon under körning (sekunder)",
           "end_repeat_count": "Antal upprepningar för avslut",
-          "start_energy_threshold": "Energiport för start (Wh)",
-          "end_energy_threshold": "Energiport för slut (Wh)",
+          "start_energy_threshold": "Energigräns för start (Wh)",
+          "end_energy_threshold": "Energigräns för slut (Wh)",
           "auto_maintenance": "Aktivera automatiskt underhåll",
-          "expose_debug_entities": "Visa felsökningsenheter",
+          "expose_debug_entities": "Visa felsökningsentiteter",
           "save_debug_traces": "Spara felsökningsspår",
           "anti_wrinkle_enabled": "Antirynkskydd (endast torktumlare/kombinationsmaskin)",
           "anti_wrinkle_max_power": "Antirynkskydd: maxeffekt (W) (endast torktumlare/kombinationsmaskin)",
           "anti_wrinkle_max_duration": "Antirynkskydd: maxvaraktighet (s) (endast torktumlare/kombinationsmaskin)",
-          "anti_wrinkle_exit_power": "Antirynkskydd: avslutningseffekt (W) (endast torktumlare/kombinationsmaskin)",
+          "anti_wrinkle_exit_power": "Antirynkskydd: gränseffekt för avslut (W) (endast torktumlare/kombinationsmaskin)",
           "dtw_bandwidth": "DTW-bandbredd",
-          "external_end_trigger_enabled": "Aktivera extern cykelslututlösare",
-          "external_end_trigger": "Extern cykelslutsensor",
+          "external_end_trigger_enabled": "Aktivera extern signal för cykelslut",
+          "external_end_trigger": "Extern sensor för cykelslut",
           "external_end_trigger_inverted": "Invertera utlösarlogik (utlösning vid AV)"
         },
         "data_description": {
@@ -196,46 +196,46 @@
           "start_threshold_w": "Effekten måste stiga ÖVER denna tröskel för att STARTA en cykel. Ställ in högre än din standbyeffekt. Standard: min_power + 1 W.",
           "stop_threshold_w": "Effekten måste falla UNDER denna tröskel för att AVSLUTA en cykel. Ställ in strax över noll för att undvika brus som utlöser falska avslut. Standard: 0,6 × min_power.",
           "min_off_gap": "Om en cykel startar inom så många sekunder efter att den föregående slutade, kommer de att slås samman till en enda cykel.",
-          "start_duration_threshold": "Ignorera korta kraftspikar kortare än denna varaktighet (sekunder). Filtrerar bort startspikar (t.ex. 60W i 2s) innan den riktiga cykeln startar. Standard: 5s.",
-          "progress_reset_delay": "Efter att en cykel har slutförts (100 %), vänta så många sekunder med tomgång innan du återställer förloppet till 0 %. Standard: 300s.",
-          "no_update_active_timeout": "För sensorer med publicering vid ändring: avsluta endast en AKTIV cykel om inga uppdateringar inkommer under så många sekunder. Slutförande med låg effekt använder fortfarande avstängningsfördröjningen.",
+          "start_duration_threshold": "Ignorera korta effektspikar som varar kortare än den här tiden (sekunder). Filtrerar bort uppstartstoppar (t.ex. 60 W i 2 s) innan den riktiga cykeln börjar. Standard: 5 s.",
+          "progress_reset_delay": "När en cykel är klar (100 %) väntar systemet så här många sekunder i vila innan förloppet återställs till 0 %. Standard: 300 s.",
+          "no_update_active_timeout": "För sensorer som bara uppdaterar vid förändring: tvinga bara avslut på en AKTIV cykel om inga uppdateringar kommer under så här många sekunder. Avslut vid låg effekt använder fortfarande off_delay.",
           "sampling_interval": "Minsta samplingsintervall i sekunder. Uppdateringar snabbare än denna takt ignoreras. Standard: 2,0s.",
-          "auto_label_confidence": "Märk automatiskt cykler vid eller över denna konfidens vid slutförande (0,0–1,0).",
-          "learning_confidence": "Minsta konfidens för att begära användarverifiering via en händelse (0,0–1,0).",
-          "duration_tolerance": "Tolerans för uppskattningar av återstående tid under körning (0,0–0,5 motsvarar 0–50%).",
-          "profile_match_interval": "Hur ofta (i sekunder) profilmatchning ska försökas under en cykel. Lägre värden ger snabbare identifiering men ökar CPU-användningen. Standard: 300s (5 minuter).",
-          "profile_match_min_duration_ratio": "Minsta varaktighetsförhållande för profilmatchning. Den pågående cykeln måste vara minst denna andel av profilens varaktighet för att matcha. Lägre = tidigare matchning. Standard: 0,50 (50%).",
-          "profile_match_max_duration_ratio": "Maximalt varaktighetsförhållande för profilmatchning. Den pågående cykeln får inte överstiga denna multipel av profilvaraktigheten. Högre = mer generöst. Standard: 1,50 (150%).",
+          "auto_label_confidence": "Märk cykler automatiskt när säkerheten vid avslut är minst så här hög (0,0–1,0).",
+          "learning_confidence": "Lägsta säkerhet för att be om användarverifiering via en händelse (0,0–1,0).",
+          "duration_tolerance": "Tolerans för uppskattningen av återstående tid under körning (0,0–0,5 motsvarar 0–50 %).",
+          "profile_match_interval": "Hur ofta (i sekunder) profilmatchning ska försöka göras under en cykel. Lägre värden ger snabbare identifiering men ökar CPU-användningen. Standard: 300 s (5 minuter).",
+          "profile_match_min_duration_ratio": "Minsta tidsandel för profilmatchning. Den pågående cykeln måste ha nått minst den här andelen av profilens längd för att kunna matcha. Lägre värde = tidigare matchning. Standard: 0,50 (50 %).",
+          "profile_match_max_duration_ratio": "Största tidsandel för profilmatchning. Den pågående cykeln får inte överstiga den här multipeln av profilens längd. Högre värde = mer tillåtande. Standard: 1,50 (150 %).",
           "smoothing_window": "Antal senaste effektavläsningar som används för utjämning med glidande medelvärde.",
           "profile_match_threshold": "Lägsta DTW-likhetspoäng (0,0–1,0) som krävs för att betrakta en profil som en matchning. Högre = striktare matchning, färre falskt positiva. Standard: 0,4.",
           "profile_unmatch_threshold": "DTW-likhetspoäng (0,0–1,0) under vilken en tidigare matchad profil avvisas. Bör vara lägre än matchningströskeln för att förhindra flimmer. Standard: 0,35.",
           "profile_duration_tolerance": "Tolerans som används av profilmatchning för total varaktighetsvarians (0,0–0,5). Standardbeteende: ±25 %.",
           "interrupted_min_seconds": "Körningar kortare än detta kan klassificeras som \"avbrutna\".",
-          "abrupt_drop_watts": "Absolut effektfall (W) som anses vara ett abrupt klipp.",
+          "abrupt_drop_watts": "Absolut effektfall (W) som räknas som ett tvärt fall.",
           "abrupt_drop_ratio": "Relativt fallförhållande (0–1). Exempel: 0,6 innebär att en minskning på 60 % är abrupt.",
-          "abrupt_high_load_factor": "Faktor över baslinjen som anses vara \"hög belastning\" före ett abrupt fall (används med abruptdetektering).",
+          "abrupt_high_load_factor": "Faktor över basnivån som räknas som hög belastning före ett tvärt fall (används tillsammans med abruptdetektering).",
           "max_past_cycles": "Totalt antal cykler att behålla (äldsta tas bort). Standard: 200.",
-          "max_full_traces_per_profile": "Antal nyligen märkta cykler att behålla med fullständiga effektspår per profil. Äldre spår sammanfattas via kuvert. Standard: 20.",
-          "max_full_traces_unlabeled": "Antal nyligen omärkta cykler att behålla med fullständiga effektspår för att stödja automatisk märkning. Standard: 20.",
-          "watchdog_interval": "Sekunder mellan watchdog-kontroller under körning. Standard: 5s. VARNING: Se till att detta är HÖGRE än sensorns uppdateringsintervall för att undvika falska stopp (t.ex. om sensorn uppdateras var 60:e sekund, använd 65s+).",
+          "max_full_traces_per_profile": "Hur många nyligen märkta cykler som ska behållas med fullständiga effektspår per profil. Äldre spår sammanfattas som omslutningskurvor. Standard: 20.",
+          "max_full_traces_unlabeled": "Hur många nyligen omärkta cykler som ska behållas med fullständiga effektspår för att stödja automatisk märkning. Standard: 20.",
+          "watchdog_interval": "Antal sekunder mellan watchdog-kontroller medan cykeln körs. Standard: 5 s. VARNING: Se till att värdet är HÖGRE än sensorns uppdateringsintervall för att undvika falska stopp (t.ex. om sensorn uppdateras var 60:e sekund bör du använda 65 s eller mer).",
           "completion_min_seconds": "Cykler kortare än detta markeras som \"avbrutna\" även om de avslutas naturligt. Standard: 600s.",
           "notify_before_end_minutes": "Minuter före det beräknade slutet av cykeln för att utlösa ett meddelande. Ställ in på 0 för att inaktivera. Standard: 0.",
-          "auto_tune_noise_events_threshold": "Antal korta/lågeffekts bruscykler inom 24 timmar som behövs för att automatiskt justera min_power. Standard: 3.",
+          "auto_tune_noise_events_threshold": "Antal korta eller brusiga lågeffektcykler inom 24 timmar som krävs för att min_power ska justeras automatiskt. Standard: 3.",
           "running_dead_zone": "Efter cykelstart, ignorera effektsänkningar i så många sekunder för att förhindra falsk slutdetektering under den inledande uppstartsfasen. Ställ in på 0 för att inaktivera. Standard: 0s.",
           "end_repeat_count": "Antal gånger avslutsvillkoret (effekt under tröskelvärde i off_delay) måste uppfyllas i följd innan cykeln avslutas. Högre värden förhindrar falska avslut under pauser. Standard: 1.",
-          "start_energy_threshold": "Cykeln måste ackumulera minst så mycket energi (Wh) under STARTFASEN för att bekräftas. Standard: 0,005 Wh.",
+          "start_energy_threshold": "Cykeln måste ha förbrukat minst så här mycket energi (Wh) under STARTFASEN för att bekräftas. Standard: 0,005 Wh.",
           "end_energy_threshold": "Cykeln avslutas endast om energin i det sista av-fördröjningsfönstret är under detta värde (Wh). Förhindrar falska avslut om effekten fluktuerar nära noll. Standard: 0,05 Wh.",
-          "auto_maintenance": "Aktivera automatiskt underhåll (reparera prover, slå samman fragment).",
-          "expose_debug_entities": "Visa avancerade sensorer (Konfidens, Fas, Tvetydighet) för felsökning.",
-          "save_debug_traces": "Lagra detaljerad ranknings- och effektspårdata i historiken (ökar lagringsanvändningen).",
+          "auto_maintenance": "Aktivera automatiskt underhåll (reparera mätserier, slå ihop fragment).",
+          "expose_debug_entities": "Visa avancerade sensorer (Säkerhet, Fas, Tvetydighet) för felsökning.",
+          "save_debug_traces": "Spara detaljerad ranking- och effektspårsdata i historiken (ökar lagringsbehovet).",
           "anti_wrinkle_enabled": "Ignorera korta trumrotationer med låg effekt efter att en cykel har avslutats för att förhindra spökcykler (endast torktumlare/kombinationsmaskin).",
-          "anti_wrinkle_max_power": "Pulser vid eller under denna effekt behandlas som antirynkrotationer istället för nya cykler. Gäller endast när Antirynkskydd är aktiverat.",
+          "anti_wrinkle_max_power": "Effekttoppar på eller under den här nivån behandlas som antirynkrotationer i stället för som nya cykler. Gäller bara när Antirynkskydd är aktiverat.",
           "anti_wrinkle_max_duration": "Maximal pulslängd att behandla som antirynkrotation. Gäller endast när Antirynkskydd är aktiverat.",
-          "anti_wrinkle_exit_power": "Om strömmen sjunker under denna nivå, avsluta antirynkläget omedelbart (sant av). Gäller endast när Antirynkskydd är aktiverat.",
-          "dtw_bandwidth": "Maximal tillåten tidssträckning som ett förhållande av cykelns varaktighet. Högre värden tillåter matchning av mycket varierande cykler men ökar CPU-kostnaden. Standard: 0,20 (20%).",
-          "external_end_trigger_enabled": "Aktivera övervakning av en extern binär sensor för att utlösa cykelavslutning.",
-          "external_end_trigger": "Välj en binär sensorenhet. När denna sensor utlöses avslutas den aktuella cykeln med status \"slutförd\".",
-          "external_end_trigger_inverted": "Som standard utlöses avtryckaren när sensorn slås PÅ. Markera den här rutan för att utlösa när sensorn stängs AV istället."
+          "anti_wrinkle_exit_power": "Om effekten sjunker under den här nivån avslutas antirynkläget direkt (maskinen räknas som avstängd). Gäller bara när Antirynkskydd är aktiverat.",
+          "dtw_bandwidth": "Största tillåtna tidsförskjutning i förhållande till cykelns längd. Högre värden gör det möjligt att matcha mer varierande cykler men ökar CPU-belastningen. Standard: 0,20 (20 %).",
+          "external_end_trigger_enabled": "Aktivera övervakning av en extern binär sensor som kan avsluta cykeln.",
+          "external_end_trigger": "Välj en binär sensor. När den aktiveras avslutas den aktuella cykeln med status \"klar\".",
+          "external_end_trigger_inverted": "Som standard utlöses signalen när sensorn går till PÅ. Markera rutan om den i stället ska utlösas när sensorn går till AV."
         }
       },
       "diagnostics": {
@@ -285,7 +285,7 @@
         "title": "Skapa anpassad fas",
         "description": "Skapa ett anpassat fasnamn och en beskrivning, och välj vilken enhetstyp det gäller.",
         "data": {
-          "target_device_type": "Målenhetstyp",
+          "target_device_type": "Enhetstyp",
           "phase_name": "Fasnamn",
           "phase_description": "Fasbeskrivning"
         }
@@ -299,7 +299,7 @@
       },
       "phase_catalog_edit": {
         "title": "Redigera anpassad fas",
-        "description": "Redigeringsfas: {phase_name}",
+        "description": "Redigerar fas: {phase_name}",
         "data": {
           "phase_name": "Fasnamn",
           "phase_description": "Fasbeskrivning"
@@ -352,15 +352,15 @@
         }
       },
       "assign_profile_phases_auto_detect": {
-        "title": "Automatiskt identifierade faser",
-        "description": "Profil: **{profile_name}**\n\n{timeline_svg}\n\n**{detected_count} fas(er) identifierades automatiskt.** Välj en åtgärd nedan.",
+        "title": "Identifierade faser",
+        "description": "Profil: **{profile_name}**\n\n{timeline_svg}\n\n**{detected_count} faser identifierades automatiskt.** Välj en åtgärd nedan.",
         "data": {
           "action": "Åtgärd"
         }
       },
       "assign_profile_phases_auto_detect_name": {
         "title": "Namnge identifierade faser",
-        "description": "Profil: **{profile_name}**\n\n**{detected_count} fas(er) identifierade:**\n{ranges_summary}\n\nTilldela ett namn till varje fas."
+        "description": "Profil: **{profile_name}**\n\n**{detected_count} identifierade faser:**\n{ranges_summary}\n\nGe varje fas ett namn."
       },
       "assign_profile_phases_select": {
         "title": "Tilldela fasintervall",
@@ -375,11 +375,11 @@
       },
       "create_profile": {
         "title": "Skapa ny profil",
-        "description": "Skapa en ny profil manuellt eller från en tidigare cykel.\n\nExempel på profilnamn: \"Delikat\", \"Kraftfull\", \"Snabbtvätt\"",
+        "description": "Skapa en ny profil manuellt eller utifrån en tidigare cykel.\n\nExempel på profilnamn: \"Fintvätt\", \"Intensiv\", \"Snabbtvätt\"",
         "data": {
           "profile_name": "Profilnamn",
           "reference_cycle": "Referenscykel (valfritt)",
-          "manual_duration": "Manuell varaktighet (minuter)"
+          "manual_duration": "Manuell tid (minuter)"
         }
       },
       "edit_profile": {
@@ -394,7 +394,7 @@
         "description": "Aktuell profil: {current_name}",
         "data": {
           "new_name": "Profilnamn",
-          "manual_duration": "Manuell varaktighet (minuter)"
+          "manual_duration": "Manuell tid (minuter)"
         }
       },
       "delete_profile_select": {
@@ -406,16 +406,16 @@
       },
       "delete_profile_confirm": {
         "title": "Bekräfta borttagning av profil",
-        "description": "⚠️ Detta kommer att permanent ta bort profilen: {profile_name}",
+        "description": "⚠️ Detta tar permanent bort profilen: {profile_name}",
         "data": {
-          "unlabel_cycles": "Ta bort etiketten från cykler med denna profil"
+          "unlabel_cycles": "Ta bort profilmärkning från cykler med den här profilen"
         }
       },
       "auto_label_cycles": {
         "title": "Automatisk märkning av gamla cykler",
         "description": "{info}",
         "data": {
-          "confidence_threshold": "Minsta konfidens (0,50–0,95)"
+          "confidence_threshold": "Lägsta matchningssäkerhet (0,50–0,95)"
         }
       },
       "select_cycle_to_label": {
@@ -441,15 +441,15 @@
         }
       },
       "post_process": {
-        "title": "Bearbeta historik (Slå samman/Dela)",
+        "title": "Bearbeta historik (slå ihop/dela)",
         "description": "Rensa upp cykelhistoriken genom att slå samman fragmenterade körningar och dela upp felaktigt sammanslagna cykler inom ett tidsfönster. Ange antal timmar att se tillbaka.\n{info}",
         "data": {
-          "time_range": "Tillbakablicksfönster (timmar)",
-          "gap_seconds": "Sammanfoga/dela-mellanrum (sekunder)"
+          "time_range": "Tidsfönster bakåt (timmar)",
+          "gap_seconds": "Gräns för hopslagning/delning (sekunder)"
         },
         "data_description": {
-          "time_range": "Antal timmar att skanna för fragmenterade cykler att sammanfoga. Använd 999999 för att bearbeta alla historiska data.\n{info}",
-          "gap_seconds": "Tröskel för att avgöra delning kontra sammanslagning. Luckor KORTARE än detta slås samman. Luckor LÄNGRE än detta delas. Sänk detta för att tvinga en delning på en cykel som sammanfogats felaktigt."
+          "time_range": "Antal timmar bakåt som ska genomsökas efter fragmenterade cykler att slå ihop. Använd 999999 för att bearbeta all historik.\n{info}",
+          "gap_seconds": "Gräns för att avgöra om en lucka ska delas eller slås ihop. Luckor som är KORTARE än detta slås ihop. Luckor som är LÄNGRE delas upp. Sänk värdet om du vill tvinga en delning av en cykel som slagits ihop felaktigt."
         }
       },
       "cleanup_profile": {
@@ -460,8 +460,8 @@
         }
       },
       "cleanup_select": {
-        "title": "Rensa historik – Graf och radera",
-        "description": "![Graph]({graph_url})\n\n**Visualiserar {profile_name}**\n\nGrafen visar individuella cykler som färgade linjer. Identifiera extremvärden (linjer långt från gruppen) och matcha deras färg i listan nedan för att ta bort dem.\n\n**Välj cykler att radera PERMANENT:**",
+        "title": "Rensa historik – diagram och radera",
+        "description": "![Graph]({graph_url})\n\n**Visualiserar {profile_name}**\n\nGrafen visar enskilda cykler som färgade linjer. Identifiera avvikare (linjer långt från gruppen) och matcha sedan färgen i listan nedan om du vill ta bort dem.\n\n**Välj cykler att radera permanent:**",
         "data": {
           "cycles_to_delete": "Cykler att ta bort (markera matchande färger)"
         }
@@ -481,23 +481,23 @@
         }
       },
       "editor_configure": {
-        "title": "Konfigurera och tillämpa",
+        "title": "Konfigurera och använd",
         "description": "{preview_md}",
         "data": {
           "confirm_action": "Åtgärd",
           "merged_profile": "Resulterande profil",
           "new_profile_name": "Nytt profilnamn",
           "confirm_commit": "Ja, jag bekräftar denna åtgärd",
-          "segment_0_profile": "Segment 1-profil",
-          "segment_1_profile": "Segment 2-profil",
-          "segment_2_profile": "Segment 3-profil",
-          "segment_3_profile": "Segment 4-profil",
-          "segment_4_profile": "Segment 5-profil",
-          "segment_5_profile": "Segment 6-profil",
-          "segment_6_profile": "Segment 7-profil",
-          "segment_7_profile": "Segment 8-profil",
-          "segment_8_profile": "Segment 9-profil",
-          "segment_9_profile": "Segment 10-profil"
+          "segment_0_profile": "Profil för segment 1",
+          "segment_1_profile": "Profil för segment 2",
+          "segment_2_profile": "Profil för segment 3",
+          "segment_3_profile": "Profil för segment 4",
+          "segment_4_profile": "Profil för segment 5",
+          "segment_5_profile": "Profil för segment 6",
+          "segment_6_profile": "Profil för segment 7",
+          "segment_7_profile": "Profil för segment 8",
+          "segment_8_profile": "Profil för segment 9",
+          "segment_9_profile": "Profil för segment 10"
         }
       },
       "editor_split_params": {
@@ -509,7 +509,7 @@
       },
       "reprocess_history": {
         "title": "Underhåll: Bearbeta och optimera data",
-        "description": "Utför djuprengöring av historiska data:\n1. Trimmar nolleffektavläsningar (tystnad).\n2. Korrigerar cykeltid/varaktighet.\n3. Beräknar om alla statistiska modeller (kuvert).\n\n**Kör detta för att åtgärda dataproblem eller tillämpa nya algoritmer.**"
+        "description": "Gör en djupstädning av historiska data:\n1. Tar bort nollvärden i början och slutet.\n2. Rättar tidpunkter och körtider för cykler.\n3. Räknar om alla statistiska modeller (omslutningskurvor).\n\n**Kör detta för att rätta dataproblem eller när du vill använda nya algoritmer.**"
       },
       "wipe_history": {
         "title": "Rensa historik (endast testning)",
@@ -517,36 +517,36 @@
       },
       "export_import": {
         "title": "Exportera/importera JSON",
-        "description": "Kopiera/klistra in cykler, profiler OCH inställningar för den här enheten. Exportera nedan eller klistra in JSON för att importera.",
+        "description": "Kopiera eller klistra in cykler, profiler OCH inställningar för den här enheten. Exportera nedan eller klistra in JSON för att importera.",
         "data": {
           "mode": "Åtgärd",
           "json_payload": "Komplett konfigurations-JSON"
         },
         "data_description": {
-          "mode": "Välj Exportera för att kopiera aktuell data och inställningar, eller Importera för att klistra in exporterad data från en annan WashData-enhet.",
-          "json_payload": "För export: kopiera denna JSON (inkluderar cykler, profiler och alla finjusterade inställningar). För import: klistra in JSON exporterad från WashData."
+          "mode": "Välj Exportera för att kopiera nuvarande data och inställningar, eller Importera för att klistra in exporterad data från en annan WashData-enhet.",
+          "json_payload": "För export: kopiera den här JSON-filen (inkluderar cykler, profiler och alla finjusterade inställningar). För import: klistra in JSON som exporterats från WashData."
         }
       },
       "record_cycle": {
         "title": "Spela in cykel",
-        "description": "Spela in en cykel manuellt för att skapa en ren profil utan störningar.\n\nStatus: **{status}**\nVaraktighet: {duration}s\nProver: {samples}",
+        "description": "Spela in en cykel manuellt för att skapa en ren profil utan störningar.\n\nStatus: **{status}**\nTid: {duration}s\nMätpunkter: {samples}",
         "data": {
           "action": "Åtgärd"
         }
       },
       "record_process": {
         "title": "Bearbeta inspelning",
-        "description": "![Graph]({graph_url})\n\n**Grafen visar råinspelning.** Blå = Behåll, Röd = Föreslagen trim.\n*Diagrammet är statiskt och uppdateras inte med formulärändringar.*\n\nInspelningen stoppades. Trim är justerade till den detekterade samplingsfrekvensen (~{sampling_rate}s).\n\nRå varaktighet: {duration}s\nProver: {samples}",
+        "description": "![Graph]({graph_url})\n\n**Grafen visar råinspelningen.** Blå = behåll, röd = föreslagen trimning.\n*Diagrammet är statiskt och uppdateras inte när du ändrar formuläret.*\n\nInspelningen har stoppats. Trimvärdena är justerade efter den identifierade samplingsfrekvensen (~{sampling_rate}s).\n\nRå tid: {duration}s\nMätpunkter: {samples}",
         "data": {
           "head_trim": "Trimstart (sekunder)",
           "tail_trim": "Trimslut (sekunder)",
-          "save_mode": "Spara destination",
+          "save_mode": "Spara till",
           "profile_name": "Profilnamn"
         }
       },
       "learning_feedbacks": {
         "title": "Inlärningsfeedback",
-        "description": "Välj en begäran om cykelgranskning att behandla.",
+        "description": "Välj en begäran om cykelgranskning att hantera.",
         "data": {
           "selected_feedback": "Välj cykel att granska"
         }
@@ -556,12 +556,12 @@
         "description": "Inga väntande feedbackförfrågningar hittades."
       },
       "resolve_feedback": {
-        "title": "Lös feedback",
+        "title": "Hantera feedback",
         "description": "{comparison_img}{candidates_table}\n**Identifierad profil**: {detected_profile} ({confidence_pct}%)\n**Uppskattad varaktighet**: {est_duration_min} min\n**Faktisk varaktighet**: {act_duration_min} min\n\n__Välj en åtgärd nedan:__",
         "data": {
           "action": "Vad vill du göra?",
           "corrected_profile": "Korrekt program (om du korrigerar)",
-          "corrected_duration": "Korrekt varaktighet i sekunder (om du korrigerar)"
+          "corrected_duration": "Korrekt tid i sekunder (om du korrigerar)"
         }
       },
       "trim_cycle_select": {
@@ -580,14 +580,14 @@
       },
       "trim_cycle_start": {
         "title": "Ange trimstart",
-        "description": "Ange minutoffset att börja behålla data från (0 = cykelstart).",
+        "description": "Ange minutoffset från vilken data ska behållas (0 = cykelstart).",
         "data": {
           "trim_start_min": "Start (minuter)"
         }
       },
       "trim_cycle_end": {
         "title": "Ange trimslut",
-        "description": "Ange minutoffset att sluta behålla data vid.",
+        "description": "Ange minutoffset där data ska sluta behållas.",
         "data": {
           "trim_end_min": "Slut (minuter)"
         }
@@ -608,10 +608,10 @@
       "incomplete_phase_row": "Varje fasrad måste innehålla en fas plus kompletta start-/slutvärden för det valda läget.",
       "timestamp_mode_cycle_required": "Välj en källcykel när du använder tidsstämpelläget.",
       "no_phase_ranges": "Inga fasintervall är tillgängliga för den åtgärden ännu.",
-      "feedback_notification_title": "WashData: Verifiera cykel ({device})",
-      "feedback_notification_message": "**Enhet**: {device}\n**Program**: {program} ({confidence}% konfidens)\n**Tid**: {time}\n\nWashData behöver din hjälp för att verifiera denna identifierade cykel.\n\nGå till **Inställningar > Enheter och tjänster > WashData > Konfigurera > Inlärningsfeedback** för att bekräfta eller korrigera detta resultat.",
-      "suggestions_ready_notification_title": "WashData: Föreslagna inställningar klara ({device})",
-      "suggestions_ready_notification_message": "Sensorn **Tillgängliga föreslagna inställningar** rapporterar nu **{count}** åtgärdbara rekommendationer.\n\nSå här granskar och tillämpar du dem: **Inställningar > Enheter och tjänster > WashData > Konfigurera > Avancerade inställningar > Tillämpa föreslagna värden**.\n\nFörslag är valfria och visas för granskning innan du sparar.",
+      "feedback_notification_title": "WashData: Bekräfta cykel ({device})",
+      "feedback_notification_message": "**Enhet**: {device}\n**Program**: {program} ({confidence}% säkerhet)\n**Tid**: {time}\n\nWashData behöver din hjälp för att bekräfta den här identifierade cykeln.\n\nGå till **Inställningar > Enheter och tjänster > WashData > Konfigurera > Inlärningsfeedback** för att bekräfta eller korrigera resultatet.",
+      "suggestions_ready_notification_title": "WashData: Föreslagna inställningar redo ({device})",
+      "suggestions_ready_notification_message": "Sensorn **Tillgängliga föreslagna inställningar** visar nu **{count}** rekommendationer att granska.\n\nSå här granskar och använder du dem: **Inställningar > Enheter och tjänster > WashData > Konfigurera > Avancerade inställningar > Använd föreslagna värden**.\n\nFörslagen är valfria och visas för granskning innan du sparar.",
       "trim_range_invalid": "Starten måste vara före slutet. Justera dina trimpunkter.",
       "trim_failed": "Trimmningen misslyckades. Cykeln kanske inte längre finns eller så är fönstret tomt."
     },
@@ -624,7 +624,7 @@
       "no_suggestions": "Inga föreslagna värden tillgängliga ännu. Kör några cykler och försök igen.",
       "no_predictions": "Inga förutsägelser",
       "no_custom_phases": "Inga anpassade faser hittades.",
-      "reprocess_success": "Omarbetade {count} cykler.",
+      "reprocess_success": "Bearbetade om {count} cykler.",
       "debug_data_cleared": "Felsökningsdata från {count} cykler har rensats."
     }
   },
@@ -632,37 +632,37 @@
     "notify_events_option": {
       "options": {
         "cycle_start": "Cykelstart",
-        "cycle_finish": "Cykelavslut",
-        "cycle_live": "Liveförlopp"
+        "cycle_finish": "Cykelslut",
+        "cycle_live": "Löpande uppdateringar"
       }
     },
     "common_text": {
       "options": {
         "unlabeled": "(Omärkt)",
         "create_new_profile": "Skapa ny profil",
-        "remove_label": "Ta bort etikett",
+        "remove_label": "Ta bort märkning",
         "no_reference_cycle": "(Ingen referenscykel)",
         "all_device_types": "Alla enhetstyper",
         "current_suffix": "(nuvarande)",
-        "editor_select_info": "Välj 1 cykel för att dela, eller 2+ cykler för att slå samman.",
+        "editor_select_info": "Välj 1 cykel för att dela, eller 2 eller fler cykler för att slå ihop.",
         "no_cycles_recorded": "Inga cykler registrerade ännu.",
-        "profile_summary_line": "- **{name}**: {count} cykler, {avg}m snitt",
+        "profile_summary_line": "- **{name}**: {count} cykler, {avg} min i snitt",
         "no_profiles_created": "Inga profiler har skapats ännu.",
         "phase_preview": "Fasförhandsgranskning",
-        "phase_preview_no_curve": "Genomsnittlig profilkurva är inte tillgänglig ännu. Kör/märk fler cykler för denna profil.",
+        "phase_preview_no_curve": "Det finns ännu ingen genomsnittlig profilkurva. Kör eller märk fler cykler för den här profilen.",
         "average_power_curve": "Genomsnittlig effektkurva",
         "unit_min": "min",
-        "profile_option_fmt": "{name} ({count} cykler, ~{duration}m snitt)",
-        "profile_option_short_fmt": "{name} ({count} cykler, ~{duration}m)",
+        "profile_option_fmt": "{name} ({count} cykler, ~{duration} min i snitt)",
+        "profile_option_short_fmt": "{name} ({count} cykler, ~{duration} min)",
         "deleted_cycles_from_profile": "Raderade {count} cykler från {profile}.",
         "not_enough_data_graph": "Inte tillräckligt med data för att generera graf.",
         "no_profiles_found": "Inga profiler hittades.",
-        "cycle_info_fmt": "Cykel: {start}, {duration}m, etikett: {label}",
+        "cycle_info_fmt": "Cykel: {start}, {duration} min, märkning: {label}",
         "top_candidates_header": "### Toppkandidater",
         "tbl_profile": "Profil",
-        "tbl_confidence": "Konfidens",
+        "tbl_confidence": "Säkerhet",
         "tbl_correlation": "Korrelation",
-        "tbl_duration_match": "Varaktighetsmatchning",
+        "tbl_duration_match": "Tidsmatchning",
         "detected_profile": "Identifierad profil",
         "estimated_duration": "Uppskattad varaktighet",
         "actual_duration": "Faktisk varaktighet",
@@ -673,21 +673,21 @@
         "tbl_max": "Max",
         "tbl_energy_avg": "Energi (snitt)",
         "tbl_energy_total": "Energi (totalt)",
-        "tbl_consistency": "Konst.",
+        "tbl_consistency": "Jämnhet",
         "tbl_last_run": "Senaste körning",
         "graph_legend_title": "Förklaring till grafen",
-        "graph_legend_body": "Det blå bandet representerar det minsta och maximala effektförbrukningsintervallet som observerats. Linjen visar medeleffektkurvan.",
+        "graph_legend_body": "Det blå bandet visar lägsta och högsta uppmätta effekt. Linjen visar medeleffekten.",
         "recording_preview": "Förhandsvisning av inspelning",
         "trim_start": "Trimstart",
         "trim_end": "Trimslut",
         "split_preview_title": "Förhandsgranskning av delning",
         "split_preview_found_fmt": "Hittade {count} segment.",
-        "split_preview_confirm_fmt": "Klicka på Bekräfta för att dela upp denna cykel i {count} separata cykler.",
+        "split_preview_confirm_fmt": "Bekräfta för att dela upp den här cykeln i {count} separata cykler.",
         "merge_preview_title": "Förhandsgranskning av sammanslagning",
-        "merge_preview_joining_fmt": "Slår samman {count} cykler. Luckor fylls med 0W-avläsningar.",
+        "merge_preview_joining_fmt": "Slår ihop {count} cykler. Mellanrum fylls med 0 W-avläsningar.",
         "no_power_preview": "*Ingen effektdata tillgänglig för förhandsgranskning.*",
         "profile_comparison": "Profiljämförelse",
-        "actual_cycle_label": "Denna cykel (faktisk)",
+        "actual_cycle_label": "Den här cykeln",
         "storage_usage_header": "Lagringsanvändning",
         "storage_file_size": "Filstorlek",
         "storage_cycles": "Cykler",
@@ -716,7 +716,7 @@
         "reprocess_history": "Underhåll: Bearbeta och optimera data",
         "clear_debug_data": "Rensa felsökningsdata (frigör utrymme)",
         "wipe_history": "Rensa ALL data för den här enheten (oåterkallelig)",
-        "export_import": "Exportera/importera JSON med inställningar (kopiera/klistra in)"
+        "export_import": "Exportera/importera JSON med inställningar (kopiera/klistra)"
       }
     },
     "export_import_mode": {
@@ -737,7 +737,7 @@
     "manage_profiles_action": {
       "options": {
         "create_profile": "Skapa ny profil",
-        "edit_profile": "Redigera/byt namn på profil",
+        "edit_profile": "Redigera eller byt namn på profil",
         "delete_profile": "Ta bort profil",
         "profile_stats": "Profilstatistik",
         "cleanup_profile": "Rensa historik – Graf och radera",
@@ -766,7 +766,7 @@
         "refresh_status": "Uppdatera status",
         "stop_recording": "Stoppa inspelning (spara och bearbeta)",
         "start_recording": "Starta ny inspelning",
-        "process_recording": "Bearbeta senaste inspelning (trimma och spara)",
+        "process_recording": "Bearbeta senaste inspelningen (trimma och spara)",
         "discard_recording": "Kasta senaste inspelningen"
       }
     },
@@ -774,20 +774,20 @@
       "options": {
         "new_profile": "Skapa ny profil",
         "existing_profile": "Lägg till i befintlig profil",
-        "discard": "Kasta inspelning"
+        "discard": "Kasta inspelningen"
       }
     },
     "resolve_feedback_action": {
       "options": {
-        "confirm": "Bekräfta – Korrekt identifiering",
-        "correct": "Korrigera – Välj program/längd",
-        "ignore": "Ignorera – Falskt positivt/bullrig cykel",
+        "confirm": "Bekräfta – rätt identifiering",
+        "correct": "Korrigera – välj program/tid",
+        "ignore": "Ignorera – falsk träff/brusig cykel",
         "delete": "Ta bort – Radera från historiken"
       }
     },
     "assign_profile_phases_auto_detect_action": {
       "options": {
-        "name_phases": "Namnge och tillämpa faser",
+        "name_phases": "Namnge och använd faser",
         "cancel": "Gå tillbaka utan ändringar"
       }
     },
@@ -796,7 +796,7 @@
         "set_start": "Ange startpunkt",
         "set_end": "Ange slutpunkt",
         "reset": "Återställ till full varaktighet",
-        "apply": "Tillämpa trim",
+        "apply": "Använd trimning",
         "cancel": "Avbryt"
       }
     }
@@ -804,7 +804,7 @@
   "services": {
     "label_cycle": {
       "name": "Märk cykel",
-      "description": "Tilldela en befintlig profil till en tidigare cykel eller ta bort etiketten.",
+      "description": "Koppla en befintlig profil till en tidigare cykel, eller ta bort profilmärkningen.",
       "fields": {
         "device_id": {
           "name": "Enhet",
@@ -816,13 +816,13 @@
         },
         "profile_name": {
           "name": "Profilnamn",
-          "description": "Namnet på en befintlig profil (skapa profiler i menyn Hantera profiler). Lämna tomt för att ta bort etiketten."
+          "description": "Namnet på en befintlig profil (skapa profiler i menyn Hantera profiler). Lämna tomt om du vill ta bort profilmärkningen."
         }
       }
     },
     "create_profile": {
       "name": "Skapa profil",
-      "description": "Skapa en ny profil (fristående eller baserad på en referenscykel).",
+      "description": "Skapa en ny profil (antingen manuellt eller utifrån en referenscykel).",
       "fields": {
         "device_id": {
           "name": "Enhet",
@@ -830,7 +830,7 @@
         },
         "profile_name": {
           "name": "Profilnamn",
-          "description": "Namn på den nya profilen (t.ex. \"Kraftfull\", \"Delikat\")."
+          "description": "Namn på den nya profilen (t.ex. \"Intensiv\" eller \"Fintvätt\")."
         },
         "reference_cycle_id": {
           "name": "Referenscykel-ID",
@@ -840,7 +840,7 @@
     },
     "delete_profile": {
       "name": "Ta bort profil",
-      "description": "Ta bort en profil och eventuellt avmarkera cykler som använder den.",
+      "description": "Ta bort en profil och ta vid behov bort profilmärkningen från cykler som använder den.",
       "fields": {
         "device_id": {
           "name": "Enhet",
@@ -851,22 +851,22 @@
           "description": "Profilen som ska tas bort."
         },
         "unlabel_cycles": {
-          "name": "Avmarkera cykler",
-          "description": "Ta bort profiletikett från cykler som använder denna profil."
+          "name": "Ta bort profilmärkning från cykler",
+          "description": "Ta bort profilmärkningen från cykler som använder den här profilen."
         }
       }
     },
     "auto_label_cycles": {
       "name": "Automatisk märkning av gamla cykler",
-      "description": "Märk omärkta cykler retroaktivt med hjälp av profilmatchning.",
+      "description": "Märk omärkta cykler i efterhand med hjälp av profilmatchning.",
       "fields": {
         "device_id": {
           "name": "Enhet",
           "description": "WashData-enheten."
         },
         "confidence_threshold": {
-          "name": "Konfidenströskel",
-          "description": "Minsta matchningskonfidens (0,50–0,95) för att applicera etiketter."
+          "name": "Tröskel för matchningssäkerhet",
+          "description": "Lägsta matchningssäkerhet (0,50–0,95) för att märka cykler automatiskt."
         }
       }
     },
@@ -899,7 +899,7 @@
       }
     },
     "submit_cycle_feedback": {
-      "name": "Skicka cykelfeedback",
+      "name": "Skicka feedback om cykel",
       "description": "Bekräfta eller korrigera ett automatiskt identifierat program efter en avslutad cykel. Ange antingen `entry_id` (avancerat) eller `device_id` (rekommenderas).",
       "fields": {
         "device_id": {
@@ -934,7 +934,7 @@
     },
     "record_start": {
       "name": "Starta cykelinspelning",
-      "description": "Börja manuellt spela in en ren cykel (kringgår all matchningslogik).",
+      "description": "Börja spela in en ren cykel manuellt (hoppar över all matchningslogik).",
       "fields": {
         "device_id": {
           "name": "Enhet",
@@ -948,7 +948,7 @@
       "fields": {
         "device_id": {
           "name": "Enhet",
-          "description": "WashData-enheten att stoppa inspelning på."
+          "description": "WashData-enheten där inspelningen ska stoppas."
         }
       }
     },
@@ -981,7 +981,7 @@
         "name": "Igång"
       },
       "match_ambiguity": {
-        "name": "Matchningstvetydighet"
+        "name": "Tvetydig matchning"
       }
     },
     "sensor": {
@@ -994,10 +994,10 @@
           "running": "Igång",
           "paused": "Pausad",
           "ending": "Avslutar",
-          "finished": "Färdig",
+          "finished": "Klar",
           "anti_wrinkle": "Antirynkläge",
           "interrupted": "Avbruten",
-          "force_stopped": "Tvångsstoppad",
+          "force_stopped": "Tvångsavslutad",
           "rinse": "Sköljning",
           "unknown": "Okänd"
         }
@@ -1009,7 +1009,7 @@
         "name": "Återstående tid"
       },
       "total_duration": {
-        "name": "Total varaktighet"
+        "name": "Total tid"
       },
       "cycle_progress": {
         "name": "Förlopp"
@@ -1024,7 +1024,7 @@
         "name": "Felsökningsinformation"
       },
       "match_confidence": {
-        "name": "Matchningskonfidens"
+        "name": "Matchningssäkerhet"
       },
       "top_candidates": {
         "name": "Toppkandidater",
@@ -1056,7 +1056,7 @@
     },
     "button": {
       "force_end_cycle": {
-        "name": "Tvinga cykelavslut"
+        "name": "Avsluta cykel direkt"
       }
     }
   },
